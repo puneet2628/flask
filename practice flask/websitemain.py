@@ -11,14 +11,18 @@ db_con = {
     "database": "websitedata",
 }
 
+# home page
 @app.route('/')
 def home():
     return render_template("website.html")
 
+#page after the login page for admin btn
 @app.route('/1')
 def site1():
     return render_template("website1.html")
 
+
+# login page
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -43,6 +47,7 @@ def login():
     
     return render_template("websitelogin.html")
 
+#admin login form page
 
 @app.route('/adminlogin',methods=["GET","POST"])
 def adminlogin():
@@ -58,7 +63,7 @@ def adminlogin():
         return render_template('websiteadminform.html')
 
 
-# admin Pannel
+# admin Pannel after admin login
 @app.route('/adminpannel')
 def adminpannel():
     con = pymysql.connect(**db_con)
@@ -67,7 +72,7 @@ def adminpannel():
     data =cur.fetchall()
     return render_template('websiteadminpannel.html',row=data)
 
-
+# delete the user from the database from ui
 @app.route('/deleteuser/<int:id>', methods=["GET", "POST"])
 def deleteuser(id):
     con = pymysql.connect(**db_con)
@@ -82,6 +87,8 @@ def deleteuser(id):
     
     return redirect('/adminpannel')  # Redirect to admin panel after deletion
 
+
+# update the user from the database from ui
 @app.route('/update/<int:id>',methods=['GET','POST'])
 def update(id):
         con = pymysql.connect(**db_con)
