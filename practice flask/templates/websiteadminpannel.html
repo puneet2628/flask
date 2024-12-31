@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPannel</title>
+</head>
+
+<body>
+    <table border="2" cellpadding="20">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Mobile</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for i in row%}
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.mobile}}</td>
+                <td>
+                    <form action="/delete/{{i.id}}" method="post">
+                        <button type="submit">Delete</button>
+                    </form><br>
+                    <a href="/update/{{ i.id }}"><button type="submit">Update</button></a>
+
+                </td>
+                
+            </tr>
+            {%endfor%}
+        </tbody>
+
+    </table>
+</body>
+
+</html>

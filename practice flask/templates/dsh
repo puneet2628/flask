@@ -1,0 +1,181 @@
+# python
+# from flask import *
+# import pymysql
+# import pymysql.cursors
+
+# app = Flask(__name__)
+# app.secret_key = 'your_secret_key'  # Needed for session management
+
+# # Database connection configuration
+# db_con = {
+#     "host": "localhost",
+#     "user": "root",
+#     "password": "admin",
+#     "database": "websitedata",
+# }
+
+# # Home route where we display the buttons
+# @app.route('/')
+# def home():
+#     # Check if the user is logged in
+#     user_logged_in = session.get('user_logged_in', False)
+#     return render_template("website.html", user_logged_in=user_logged_in)
+
+# # Login route to handle user login
+# @app.route('/login', methods=["POST", "GET"])
+# def login():
+#     if request.method == "POST":
+#         email = request.form['eml']
+#         password = request.form['pwd']
+
+#         # Check credentials against the database
+#         con = pymysql.connect(**db_con)
+#         cur = con.cursor(pymysql.cursors.DictCursor)
+#         cur.execute("SELECT * FROM login_data WHERE email = %s AND password = %s", (email, password))
+#         user = cur.fetchone()
+#         cur.close()
+#         con.close()
+
+#         if user:
+#             # If user exists, log them in
+#             session['user_logged_in'] = True
+#             session['user_email'] = user['email']
+#             return redirect('/')
+#         else:
+#             return "Invalid credentials, please try again."
+
+#     return render_template("login.html")
+
+# # Register route to handle user registration
+# @app.route('/register', methods=["POST", "GET"])
+# def register():
+#     if request.method == "POST":
+#         name = request.form['nme']
+#         email = request.form['eml']
+#         password = request.form['pwd']
+#         mobile = request.form['mn']
+
+#         # Insert the user into the database
+#         con = pymysql.connect(**db_con)
+#         cur = con.cursor(pymysql.cursors.DictCursor)
+#         cur.execute("INSERT INTO login_data (name, email, password, mobile) VALUES (%s, %s, %s, %s)", 
+#                     (name, email, password, mobile))
+#         con.commit()
+#         cur.close()
+#         con.close()
+
+#         return redirect('/')
+
+#     return render_template("register.html")
+
+# # Admin Login route
+# @app.route('/admin_login', methods=["POST", "GET"])
+# def admin_login():
+#     if request.method == "POST":
+#         email = request.form['eml']
+#         password = request.form['pwd']
+
+#         # Check for admin login credentials
+#         if email == "admin@example.com" and password == "admin123":
+#             session['admin_logged_in'] = True
+#             return redirect('/admin_dashboard')
+#         else:
+#             return "Invalid Admin credentials"
+
+#     return render_template("admin_login.html")
+
+# # Admin Dashboard route
+# @app.route('/admin_dashboard')
+# def admin_dashboard():
+#     if not session.get('admin_logged_in', False):
+#         return redirect('/admin_login')
+#     return "Welcome to the Admin Dashboard!"
+
+# # Logout route
+# @app.route('/logout')
+# def logout():
+#     session.clear()  # Clear session to log out the user
+#     return redirect('/')
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
+# web site.html
+# <!DOCTYPE html>
+# <html lang="en">
+
+# <head>
+#     <meta charset="UTF-8">
+#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#     <title>Website</title>
+#     <style>
+#         /* Styling as needed */
+#     </style>
+# </head>
+
+# <body>
+#     <center>
+#         {% if user_logged_in %}
+#             <!-- Show Admin Login button if user is logged in -->
+#             <a href="/admin_login"><button>Admin Login</button></a>
+#             <br>
+#             <a href="/logout"><button>Logout</button></a>
+#         {% else %}
+#             <!-- Show Login and Register buttons if user is not logged in -->
+#             <a href="/login"><button>Login</button></a>
+#             <br>
+#             <a href="/register"><button>Register</button></a>
+#         {% endif %}
+#     </center>
+# </body>
+
+# </html>
+# login.html
+# <!DOCTYPE html>
+# <html lang="en">
+# <head>
+#     <meta charset="UTF-8">
+#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#     <title>Login</title>
+# </head>
+# <body>
+#     <form action="/login" method="POST">
+#         Email: <input type="email" name="eml" required><br>
+#         Password: <input type="password" name="pwd" required><br>
+#         <button type="submit">Login</button>
+#     </form>
+# </body>
+# </html>
+
+# register.html
+# <!DOCTYPE html>
+# <html lang="en">
+# <head>
+#     <meta charset="UTF-8">
+#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#     <title>Login</title>
+# </head>
+# <body>
+#     <form action="/login" method="POST">
+#         Email: <input type="email" name="eml" required><br>
+#         Password: <input type="password" name="pwd" required><br>
+#         <button type="submit">Login</button>
+#     </form>
+# </body>
+# </html>
+# admin_login,html
+# <!DOCTYPE html>
+# <html lang="en">
+# <head>
+#     <meta charset="UTF-8">
+#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#     <title>Admin Login</title>
+# </head>
+# <body>
+#     <form action="/admin_login" method="POST">
+#         Admin Email: <input type="email" name="eml" required><br>
+#         Admin Password: <input type="password" name="pwd" required><br>
+#         <button type="submit">Login</button>
+#     </form>
+# </body>
+# </html>

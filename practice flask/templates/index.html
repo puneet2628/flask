@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <table border="2" cellpadding="20">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in row%}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td><form action="/delete/{{i.id}}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</center>
+</body>
+</html>
