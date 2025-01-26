@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            font-family: Georgia, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../static/day.jpg" alt="Logo" class="img-fluid">
+                <span class="ms-2">ClubQuiz</span>
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav navbar-nav-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quiz">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="ms-auto">
+                    {% if logged_in %}
+                    <a class="btn btn-success ms-2" href="/logout">Logout</a>
+                    {% else %}
+                    <a class="nav-link d-inline" href="login">Log in</a>
+                    <a class="btn btn-primary ms-2" href="signup">Sign up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Computer and Development Quiz</h1>
+        <form action="/submit" method="post">
+            <!-- Question 1 -->
+            <div class="form-group">
+                <label>1. Who is known as the father of Computer Science?</label><br>
+                <input type="radio" id="alan" name="question1" value="Alan Turing">
+                <label for="alan">Alan Turing</label><br>
+                <input type="radio" id="bill" name="question1" value="Bill Gates">
+                <label for="bill">Bill Gates</label><br>
+                <input type="radio" id="dennis" name="question1" value="Dennis Ritchie">
+                <label for="dennis">Dennis Ritchie</label>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="form-group">
+                <label>2. Which programming language is primarily used for Android development?</label><br>
+                <input type="radio" id="java" name="question2" value="Java">
+                <label for="java">Java</label><br>
+                <input type="radio" id="python" name="question2" value="Python">
+                <label for="python">Python</label><br>
+                <input type="radio" id="ruby" name="question2" value="Ruby">
+                <label for="ruby">Ruby</label>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="form-group">
+                <label>3. What does HTTP stand for?</label><br>
+                <input type="radio" id="protocol" name="question3" value="HyperText Transfer Protocol">
+                <label for="protocol">HyperText Transfer Protocol</label><br>
+                <input type="radio" id="markup" name="question3" value="HyperText Markup Protocol">
+                <label for="markup">HyperText Markup Protocol</label><br>
+                <input type="radio" id="process" name="question3" value="HyperText Processing Protocol">
+                <label for="process">HyperText Processing Protocol</label>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="form-group">
+                <label>4. Which of the following is a NoSQL database?</label><br>
+                <input type="radio" id="mongodb" name="question4" value="MongoDB">
+                <label for="mongodb">MongoDB</label><br>
+                <input type="radio" id="mysql" name="question4" value="MySQL">
+                <label for="mysql">MySQL</label><br>
+                <input type="radio" id="postgresql" name="question4" value="PostgreSQL">
+                <label for="postgresql">PostgreSQL</label>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="form-group">
+                <label>5. What does the 'C' in CPU stand for?</label><br>
+                <input type="radio" id="central" name="question5" value="Central">
+                <label for="central">Central</label><br>
+                <input type="radio" id="computational" name="question5" value="Computational">
+                <label for="computational">Computational</label><br>
+                <input type="radio" id="control" name="question5" value="Control">
+                <label for="control">Control</label>
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="form-group">
+                <label>6. Which of the following is a frontend framework?</label><br>
+                <input type="radio" id="react" name="question6" value="React">
+                <label for="react">React</label><br>
+                <input type="radio" id="django" name="question6" value="Django">
+                <label for="django">Django</label><br>
+                <input type="radio" id="flask" name="question6" value="Flask">
+                <label for="flask">Flask</label>
+            </div>
+            
+            <!-- Question 7 -->
+            <div class="form-group">
+                <label>7. What is the file extension for Python scripts?</label><br>
+                <input type="radio" id="py" name="question7" value=".py">
+                <label for="py">.py</label><br>
+                <input type="radio" id="js" name="question7" value=".js">
+                <label for="js">.js</label><br>
+                <input type="radio" id="java" name="question7" value=".java">
+                <label for="java">.java</label>
+            </div>
+            
+            <!-- Question 8 -->
+            <div class="form-group">
+                <label>8. What does IDE stand for?</label><br>
+                <input type="radio" id="environment" name="question8" value="Integrated Development Environment">
+                <label for="environment">Integrated Development Environment</label><br>
+                <input type="radio" id="engine" name="question8" value="Integrated Development Engine">
+                <label for="engine">Integrated Development Engine</label><br>
+                <input type="radio" id="extension" name="question8" value="Integrated Development Extension">
+                <label for="extension">Integrated Development Extension</label>
+            </div>
+            
+            <!-- Question 9 -->
+            <div class="form-group">
+                <label>9. Which company developed the Java programming language?</label><br>
+                <input type="radio" id="sun" name="question9" value="Sun Microsystems">
+                <label for="sun">Sun Microsystems</label><br>
+                <input type="radio" id="microsoft" name="question9" value="Microsoft">
+                <label for="microsoft">Microsoft</label><br>
+                <input type="radio" id="google" name="question9" value="Google">
+                <label for="google">Google</label>
+            </div>
+            
+            <!-- Question 10 -->
+            <div class="form-group">
+                <label>10. Which CSS property is used to change text color?</label><br>
+                <input type="radio" id="color" name="question10" value="color">
+                <label for="color">color</label><br>
+                <input type="radio" id="font-color" name="question10" value="font-color">
+                <label for="font-color">font-color</label><br>
+                <input type="radio" id="text-color" name="question10" value="text-color">
+                <label for="text-color">text-color</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <br><br><br>
+    <!-- Footer Section -->
+    <footer class="container-fluid bg-dark bg-gradient text-light py-5">
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <h3>ClubQuiz</h3>
+                <ul class="list-unstyled ">
+                    <li><a href="/" class="text-light">Home</a></li>
+                    <li><a href="/about" class="text-light">About</a></li>
+                    <li><a href="/quiz" class="text-light">Quiz</a></li>
+                    <li><a href="/contact" class="text-light">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div class="col-12 col-lg-3">
+                <h3>Support</h3>
+                <ul class="list-unstyled ">
+                    <li><a href="#" class="text-light">Help Center</a></li>
+                    <li><a href="#" class="text-light">Terms of Use</a></li>
+                    <li><a href="#" class="text-light">Privacy Policy</a></li>
+                    <li><a href="#" class="text-light">Content Complaints</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect With Us -->
+            <div class="col-12 col-lg-3">
+                <h3>Connect With Us</h3>
+                <ul class="list-unstyled d-flex gap-2">
+                    <li><a href="https://www.instagram.com/" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/1362/1362857.png" alt="Facebook" width="40"
+                                height="30"></a></li>
+                    <li><a href="https://x.com/" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/14417/14417460.png" alt="Twitter" width="40"
+                                height="30"></a></li>
+                    <li><a href="https://www.facebook.com/" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/13266/13266170.png" alt="Instagram"
+                                width="40" height="30"></a></li>
+                    <li><a href="https://www.youtube.com/" class="text-light"><img src="https://cdn-icons-png.flaticon.com/128/220/220353.png"
+                                alt="LinkedIn" width="40" height="30"></a></li>
+                </ul>
+            </div>
+
+            <!-- Download the App -->
+            <div class="col-12 col-lg-3">
+                <h3>Download the App</h3>
+                <ul class="d-flex list-unstyled gap-5">
+                    <li><a href="#" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/6124/6124997.png" alt="Google Play"
+                                width="50" height="35"></a></li>
+                    <li><a href="#" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/2673/2673886.png" alt="App Store" width="55"
+                                height="40"></a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="text-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 ClubQuiz . All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

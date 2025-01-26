@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/main.css">
+    <style>
+            
+    .mod-text p,h1,h2{
+    font-size: 4rem;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../static/day.jpg" alt="Logo" class="img-fluid">
+                <span class="ms-2">ClubQuiz</span>
+            </a>
+    
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav navbar-nav-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quiz">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="ms-auto">
+                    {% if logged_in %}
+                        <a class="btn btn-success ms-2" href="/logout">Logout</a>
+                    {% else %}
+                        <a class="nav-link d-inline" href="login">Log in</a>
+                        <a class="btn btn-primary ms-2" href="signup">Sign up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+<br><br><br><br><br><br><br><br><br>
+<div class="mod-txt">
+<div class="container ">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <h2><span>About Us:</span></h2>
+            <p class="text-justify">Welcome to <span>ClubQuiz</span> – your ultimate destination for engaging and
+                challenging quizzes on various topics!
+                Whether you're an avid trivia lover or just looking to pass the time with some fun questions, we
+                have
+                something for everyone. Our mission is to make learning enjoyable, challenge your knowledge, and
+                provide a
+                platform for people to test their intellect.</p>
+        </div>
+        <div class="col-12 col-lg-6     ">
+            <img src="../static/1.png" class="img-fluid" alt="" width="500px">
+        </div>
+    </div>
+</div><br><br><br><br><br>
+
+
+<div class="bg-secondary-subtle bg-gradient">
+    <hr> <br><br>
+    <div data-aos="fade-up"
+ data-aos-anchor-placement="top-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <img src="../static/1.png" alt="" class="img-fluid pb-5" width="500px">
+            </div>
+            <div class="col-lg-6 col-12">
+                <h2 class="text"><span>Our Vision:</span></h2>
+                <p>At ClubQuiz, we believe that learning and fun can go hand in hand. Our vision is to create a
+                    vibrant and interactive space where individuals can explore a wide range of subjects through
+                    quizzes and games. From general knowledge to specialized topics, we aim to provide quizzes that
+                    cater to all age groups and knowledge levels. Our goal is to inspire curiosity and provide an
+                    opportunity for people to expand their knowledge in an enjoyable and competitive manner.</p>
+            </div>
+        </div>
+    </div><hr>
+</div>
+</div><br><br>
+
+<div data-aos="fade-up"
+ data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <h2><span>What We Offer:</span></h2>
+            <p>
+                Our website is designed to offer a comprehensive range of quizzes on various subjects. 
+                Here’s a glimpse of what you can expect from <span>ClubQuiz:</span>
+            </p>
+            <ol class="">
+                <li><span>Wide Range of Topics:</span> From history, geography, and science to entertainment, sports, literature, and pop culture, we cover it all. 
+                    You can find quizzes on a variety of subjects that interest you, whether you’re passionate about space exploration or the latest celebrity gossip.
+                </li><br>
+
+                <li><span>Fun and Interactive Experience:</span> Our quizzes are designed to be both entertaining and educational. 
+                    You can take them alone to test your knowledge or challenge your friends and family to see who knows more.
+                    With multiple-choice, true/false, and open-ended questions, each quiz is a fun experience that makes learning feel like play.
+
+                </li><br>
+                <li>
+                    <span>Multiple Difficulty Levels:</span> Whether you're a quiz novice or a seasoned pro, we offer quizzes that cater to all difficulty levels. 
+                    You can start with easy questions and gradually work your way up to more challenging ones, or you can choose the difficulty level that best suits your expertise. 
+                    Our platform is designed to help you improve over time by providing new and increasingly difficult quizzes.
+                </li><br>
+                <li>
+                    <span>Leaderboard and Achievements:</span> For those who enjoy a bit of competition, we have an integrated leaderboard system that allows you to see how you rank against other quiz enthusiasts.
+                     As you progress through quizzes and achieve high scores, you’ll also earn achievements and badges to display your accomplishments.
+
+                </li><br>
+                <li>
+                    <span>Regular Updates: </span>We’re always updating our quiz library with new questions and themes.
+                     This ensures that you always have fresh content to explore and keeps you engaged with the latest trivia in your areas of interest. 
+                    Be sure to check back regularly for exciting new quizzes!
+                </li><br>
+            </ol>
+        </div>
+    </div>
+       
+    </div>
+</div>
+
+
+<div data-aos="fade-up"
+ data-aos-anchor-placement="top-bottom"  data-aos-duration="1500">
+<div class="bg-secondary-subtle bg-gradient ">
+    <hr> <br><br>
+    <div class="container ">
+        <h2><span>Our Team: </span></h2>
+        <p>
+            <span>ClubQuiz </span> founded by a team of passionate trivia lovers, educators, and tech enthusiasts who wanted to build a space where knowledge meets fun.
+            Our team is dedicated to bringing you the best quiz experience possible, and we work tirelessly to ensure that every quiz is not only enjoyable but also accurate and well-researched.
+        </p>
+        <p>
+            From quiz designers to web developers, we come from diverse backgrounds, united by our love of learning and our commitment to creating an engaging platform for all.
+             We are constantly working on improving the website, adding new features, and ensuring that our content is up-to-date and relevant.
+             Your feedback is important to us, and we encourage you to share your thoughts, suggestions, and ideas to help us improve QuizMaster even further.
+        </p><br><br>
+    </div><hr>
+</div>
+</div>
+
+<div data-aos="fade-up"
+ data-aos-anchor-placement="top-bottom"   data-aos-duration="1500" >
+<div class="container">
+    <h2><span>Conclusion:</span></h2>
+    <p>
+        At <span>ClubQuiz</span>, we are dedicated to making learning fun and interactive.
+         With a wide variety of quizzes, customizable difficulty levels, and a community of quiz enthusiasts, we offer an experience that goes beyond traditional trivia.
+         Whether you're looking to test your knowledge, challenge your friends, or simply enjoy some fun, we have something for everyone.
+    </p>
+    <p>
+        Thank you for visiting <span> ClubQuiz!</span> We hope you enjoy exploring our quizzes and becoming part of our growing community. If you have any questions, suggestions, or feedback, don’t hesitate to reach out to us. We're always here to help!
+
+
+    </p>
+</div>
+</div>
+</div><br> <br>
+<!-- Footer Section -->
+<footer class="container-fluid bg-dark bg-gradient text-light py-5">
+<div class="row">
+    <div class="col-12 col-lg-3">
+        <h3>ClubQuiz</h3>
+        <ul class="list-unstyled ">
+            <li><a href="/" class="text-light">Home</a></li>
+            <li><a href="/about" class="text-light">About</a></li>
+            <li><a href="/quiz" class="text-light">Quiz</a></li>
+            <li><a href="/contact" class="text-light">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Support Links -->
+    <div class="col-12 col-lg-3">
+        <h3>Support</h3>
+        <ul class="list-unstyled ">
+            <li><a href="#" class="text-light">Help Center</a></li>
+            <li><a href="#" class="text-light">Terms of Use</a></li>
+            <li><a href="#" class="text-light">Privacy Policy</a></li>
+            <li><a href="#" class="text-light">Content Complaints</a></li>
+        </ul>
+    </div>
+
+    <!-- Connect With Us -->
+    <div class="col-12 col-lg-3">
+        <h3>Connect With Us</h3>
+        <ul class="list-unstyled d-flex gap-2">
+            <li><a href="https://www.instagram.com/" class="text-light"><img
+                        src="https://cdn-icons-png.flaticon.com/128/1362/1362857.png" alt="Facebook" width="40"
+                        height="30"></a></li>
+            <li><a href="https://x.com/" class="text-light"><img
+                        src="https://cdn-icons-png.flaticon.com/128/14417/14417460.png" alt="Twitter" width="40"
+                        height="30"></a></li>
+            <li><a href="https://www.facebook.com/" class="text-light"><img
+                        src="https://cdn-icons-png.flaticon.com/128/13266/13266170.png" alt="Instagram"
+                        width="40" height="30"></a></li>
+            <li><a href="https://www.youtube.com/" class="text-light"><img src="https://cdn-icons-png.flaticon.com/128/220/220353.png"
+                        alt="LinkedIn" width="40" height="30"></a></li>
+        </ul>
+    </div>
+
+    <!-- Download the App -->
+    <div class="col-12 col-lg-3">
+        <h3>Download the App</h3>
+        <ul class="d-flex list-unstyled gap-5">
+            <li><a href="#" class="text-light"><img
+                        src="https://cdn-icons-png.flaticon.com/128/6124/6124997.png" alt="Google Play"
+                        width="50" height="35"></a></li>
+            <li><a href="#" class="text-light"><img
+                        src="https://cdn-icons-png.flaticon.com/128/2673/2673886.png" alt="App Store" width="55"
+                        height="40"></a></li>
+        </ul>
+    </div>
+</div>
+<hr class="text-light">
+<div class="text-center">
+    <p class="mb-0">&copy; 2025 ClubQuiz . All Rights Reserved.</p>
+</div>
+</footer>
+ <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+
+</html>
+

@@ -1,0 +1,37 @@
+.navbar-nav-center {
+    margin: 0 auto;
+}
+.navbar-nav .nav-link {
+    margin: 0 15px; /* Add spacing between nav items */
+    font-size: 1.1rem; /* Increase font size */
+    color: #343a40 !important; /* Darker text color */
+    font-weight: 500; /* Optional: Add slight boldness */
+}
+.navbar-nav .nav-link:hover {
+    color: #000 !important; /* Darker color on hover */
+}
+.navbar-brand img {
+    height: 60px; /* Adjust logo height */
+    width: 60px; /* Adjust logo width */
+    object-fit: cover; /* Ensure the logo keeps its proportions */
+}
+.navbar-brand span {
+    font-size: 1.2rem; /* Slightly larger text for the brand */
+    font-weight: bold;
+    color: #343a40; /* Match dark color for consistency */
+}
+body {
+
+    font-family: Georgia, serif;
+}
+
+span {
+    color: crimson;
+}
+
+
+.mod-text p,h1,h2{
+    font-size: 4rem;
+}
+
+

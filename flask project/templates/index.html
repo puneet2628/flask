@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubQuiz</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+
+<body><!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../static/day.jpg" alt="Logo" class="img-fluid">
+                <span class="ms-2">ClubQuiz</span>
+            </a>
+    
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav navbar-nav-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quiz">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="ms-auto">
+                    {% if logged_in %}
+                        <a class="btn btn-success ms-2" href="/logout">Logout</a>
+                    {% else %}
+                        <a class="nav-link d-inline" href="login">Log in</a>
+                        <a class="btn btn-primary ms-2" href="signup">Sign up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+     <br><br><br><br><br><br><br><br><br>
+    <div class="container ">
+        <h1 class="text-center  "> " <span> Enhance Your Knowladge </span><br>With Playing Our Intrusting Quize's"</h1>
+        <p class="text-center fs-5 my-5"> We Offers You Huge Collection Of Quiz Topics,
+            We Also Update Our Site Data , Our Motive Is To Give <br> Important and Latest Information
+            To Our User, So That They Alyways Remain Up to Date And Implemnt That Data Or Information In there Fields.
+        </p>
+
+        <div class=" row ">
+            <div class="col text-center">
+              <a href="/quiz"><button class="btn btn-danger">Start Your Quiz Journey....!</button></a>
+            </div>
+        </div>
+    </div><br><br><br>
+    </div>
+    </div>
+    <div class="bg-secondary-subtle bg-gradient">
+        <hr> <br><br><br>
+        <div data-aos="fade-up" data-aos-duration="200">
+
+            <div class="container ">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+
+                        <h3><span>What is Benifits Of Playing Quize Games:</span></h3>
+                        <ul class="">
+                            <li>Playing quiz games frequently improves their information retention, decisiveness, and
+                                analytical skills.</li><br>
+                            <li> When players have a solid ability to retain information, their ability to answer a wide
+                                range of
+                                questions improves.</li><br>
+                            <li>A higher level of decisiveness reduces mulling and overthinking, allowing players to
+                                react faster.
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-12 col-lg-6 ">
+                        <img src="../static/1.png" alt="" width="500px" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+        </div>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="900">
+        <div class="container">
+            <h2 class="text-center my-5"><span>Become An Expert Quiz Master</span> </h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../static/1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">HTML</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <div class="text-center">
+                                <a href="/quiz" class="btn btn-danger">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../static/1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">CSS</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <div class="text-center">
+                                <a href="/quiz" class="btn btn-danger">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="../static/1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">PYTHON</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <div class="text-center">
+                                <a href="/quiz" class="btn btn-danger">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+    <!-- Footer Section -->
+    <footer class="container-fluid bg-dark bg-gradient text-light py-5">
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <h3>ClubQuiz</h3>
+                <ul class="list-unstyled ">
+                    <li><a href="/" class="text-light">Home</a></li>
+                    <li><a href="/about" class="text-light">About</a></li>
+                    <li><a href="/quiz" class="text-light">Quiz</a></li>
+                    <li><a href="/contact" class="text-light">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div class="col-12 col-lg-3">
+                <h3>Support</h3>
+                <ul class="list-unstyled ">
+                    <li><a href="#" class="text-light">Help Center</a></li>
+                    <li><a href="#" class="text-light">Terms of Use</a></li>
+                    <li><a href="#" class="text-light">Privacy Policy</a></li>
+                    <li><a href="#" class="text-light">Content Complaints</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect With Us -->
+            <div class="col-12 col-lg-3">
+                <h3>Connect With Us</h3>
+                <ul class="list-unstyled d-flex gap-2">
+                    <li><a href="https://www.instagram.com/" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/1362/1362857.png" alt="Facebook" width="40"
+                                height="30"></a></li>
+                    <li><a href="https://x.com/" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/14417/14417460.png" alt="Twitter" width="40"
+                                height="30"></a></li>
+                    <li><a href="https://www.facebook.com/" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/13266/13266170.png" alt="Instagram"
+                                width="40" height="30"></a></li>
+                    <li><a href="https://www.youtube.com/" class="text-light"><img src="https://cdn-icons-png.flaticon.com/128/220/220353.png"
+                                alt="LinkedIn" width="40" height="30"></a></li>
+                </ul>
+            </div>
+
+            <!-- Download the App -->
+            <div class="col-12 col-lg-3">
+                <h3>Download the App</h3>
+                <ul class="d-flex list-unstyled gap-5">
+                    <li><a href="#" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/6124/6124997.png" alt="Google Play"
+                                width="50" height="35"></a></li>
+                    <li><a href="#" class="text-light"><img
+                                src="https://cdn-icons-png.flaticon.com/128/2673/2673886.png" alt="App Store" width="55"
+                                height="40"></a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="text-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 ClubQuiz . All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
